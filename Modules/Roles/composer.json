@@ -1,0 +1,31 @@
+{
+    "name": "admin/roles",
+    "description": "",
+    "authors": [
+        {
+            "name": "Cas Rovers",
+            "email": "casrovers@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Roles\\": "",
+            "Modules\\Roles\\App\\": "app/",
+            "Modules\\Roles\\Database\\Factories\\": "database/factories/",
+            "Modules\\Roles\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Roles\\Tests\\": "tests/"
+        }
+    }
+}

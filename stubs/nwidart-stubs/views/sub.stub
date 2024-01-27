@@ -1,0 +1,17 @@
+@extends('core::layouts.master')
+
+@section('title')
+    @yield('$LOWER_NAME$-title', 'User Module')
+@endsection
+
+@section('module-head')
+    <link rel="stylesheet" href="{{ mix('Modules/$STUDLY_NAME$/css/app.css') }}">
+@endsection
+
+@section('content')
+    @yield('$LOWER_NAME$-content')
+@endsection
+
+@section('module-scripts')
+    <script type="text/javascript" src="{{ mix('Modules/$STUDLY_NAME$/js/app.js') }}"></script>
+@endsection
