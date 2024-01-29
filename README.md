@@ -60,11 +60,13 @@
     ```bash
     php artisan serve
     ```
-   Then tou get this message in the console:
+   After running the server, you'll receive the following message in the console:
     ```bash
     INFO  Server running on [http://127.0.0.1:8000].
     ```
-   Then just enter or click the link in the console to open the application in the browser.
+   To open the application in your browser, simply do one of the following:
+   - Copy and paste the URL `http://127.0.0.1:8000` into your browser's address bar.
+   - Click on the link provided in the console output.
 
 6. ### Additional Notes:
     - Make sure to have Node.js and Composer installed on your system before running the installation commands.
