@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             if (!User::where('email', $userData['email'])->exists()) {
                 $user = User::factory()->create($userData);
 
-                $role = Role::where('name', 'Super Admin')->first();
+                $role = Role::where('name', 'super-admin')->first();
                 if ($role) {
                     $user->assignRole($role->id);
                 } else {
