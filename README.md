@@ -69,13 +69,20 @@
    - Click on the link provided in the console output.
 
 6. ### Additional Notes:
-    - Make sure to have Node.js and Composer installed on your system before running the installation commands.
-    - If you are using a local development server ensure that your web server (Apache, Nginx, etc.) is configured to point to the `public` directory of the application.
-    - You may need to set up file permissions and other server configurations based on your environment.
+    - Ensure Node.js and Composer are installed on your system before running the installation commands.
+    - If you're using a local development server, make sure your web server (Apache, Nginx, etc.) is configured to point to the `public` directory of the application.
+    - You may need to configure file permissions and other server settings based on your environment.
 
    #### Admin panel:
-    to access the admin panel of this application go to the `/admin` in your browser, The credentials are already seeded into the database the e-mail address is `development@dev.com` and the password is `password` **(change this password if the application is going into production)**
+   To access the admin panel:
+    - Open your browser and navigate to `/admin`.
 
+   The default credentials are:
+
+    - **Email:** `development@dev.com`
+    - **Password:** `password`
+
+   **Note:** It's recommended to change this password if the application is intended for production use.
 7. ### Contributing:
    Contributions are welcome! Feel free to submit pull requests or raise issues if you encounter any problems.
 8. ### License:
