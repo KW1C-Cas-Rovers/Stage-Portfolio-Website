@@ -38,7 +38,7 @@
             <!-- Bio -->
             <div class="mb-3">
                 <label for="bio" class="form-label">{{ __('Bio') }}</label>
-                <textarea id="bio" class="form-control" name="bio">{{ $user->bio }}</textarea>
+                <textarea id="bio" class="form-control" name="bio" rows="4" cols="50">{{ $user->bio }}</textarea>
             </div>
 
             <!-- Website -->
@@ -69,7 +69,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Update User</button>
+            <button type="submit" class="btn btn-primary">Update Role</button>
         </form>
 
         <hr>

@@ -2,6 +2,7 @@
 
 namespace Modules\Users\app\Models;
 
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,7 +31,6 @@ class User extends Authenticatable
         'last_name',
         'email',
         'password',
-        'role',
         'avatar',
         'bio',
         'website',
@@ -54,14 +54,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_secret',
-        'two_factor_recovery_codes'
     ];
 
     protected $guarded = [
         'remember_token',
-        'two_factor_secret',
-        'two_factor_recovery_codes'
     ];
 
     /**
@@ -72,7 +68,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'two_factor_recovery_codes' => 'json',
     ];
 
     /**
@@ -153,5 +148,15 @@ class User extends Authenticatable
     public function hasRole(string $roleName): BelongsToMany
     {
         return $this->roles()->where('name', $roleName);
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return UserFactory
+     */
+    public static function newFactory(): UserFactory
+    {
+        return UserFactory::new();
     }
 }
