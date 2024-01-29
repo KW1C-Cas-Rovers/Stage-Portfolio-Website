@@ -151,6 +151,19 @@ class User extends Authenticatable
     }
 
     /**
+     * Check if the user has a specific role.
+     *
+     * @param array $roleNames
+     * @return bool
+     */
+    public function hasAnyRole(array $roleNames): bool
+    {
+        $matchingRoles = $this->roles()->whereIn('name', $roleNames)->get();
+
+        return $matchingRoles->isNotEmpty();
+    }
+
+    /**
      * Create a new factory instance for the model.
      *
      * @return UserFactory

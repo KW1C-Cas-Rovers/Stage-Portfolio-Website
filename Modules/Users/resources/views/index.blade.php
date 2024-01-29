@@ -23,8 +23,9 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">name: {{ $user->full_name }}</h5>
-                            <p class="card-text">E-mail: {{ $user->email }}</p>
+                            <h5 class="card-title"><strong>name:</strong> {{ $user->full_name }}</h5>
+                            <p class="card-text mb-0"><strong>E-mail:</strong> {{ $user->email }}</p>
+                            <p class="card-text"><strong>Role:</strong> {{ $user->roles->first()->name }}</p>
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">Edit</a>
                             <form method="POST" action="{{ route('users.destroy', $user->id) }}" class="d-inline">
                                 @csrf

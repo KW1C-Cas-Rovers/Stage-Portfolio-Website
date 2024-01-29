@@ -33,3 +33,43 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::put('/admin/users/{user}/update-password', [UsersController::class, 'updatePassword'])->name('users.updatePassword');
     Route::put('/admin/users/{id}/update-role', [UsersController::class, 'updateRole'])->name('users.updateRole');
 });
+
+//role middleware you can use:
+
+/*
+ |--------------------------------------------------------------------------
+ | role middleware you can use:
+ |--------------------------------------------------------------------------
+ |
+ | role:super-admin
+ | role:editor
+ | role:author
+ | role:user
+ |
+ */
+
+// Authenticated Routes with Role Middleware
+Route::middleware(['auth', 'role:super-admin'])->prefix('admin')->group(function () {
+    // Routes accessible only to super-admin
+    // Example: Super Admin only can manage users
+    // Route::resource('/users', UsersController::class)->names('users');
+});
+
+Route::middleware(['auth', 'role:editor'])->prefix('admin')->group(function () {
+    // Routes accessible only to editors
+    // Example: The editor can only edit the user information/password
+    // Route::get('/users/{user}/edit', [UsersController::class, 'edit'])->name('users.edit');
+});
+
+Route::middleware(['auth', 'role:author'])->prefix('admin')->group(function () {
+    // Routes accessible only to authors
+    // Example: The Author can create/edit the pages
+    // Route::get('/pages/{page}/edit', [PagesController::class, 'edit'])->name('pages.edit');
+    // Route::get('/pages/create', [PagesController::class, 'create'])->name('pages.create');
+});
+
+Route::middleware(['auth', 'role:user'])->prefix('admin')->group(function () {
+    // Routes accessible only to users
+    // Example: The user can only edit his own information/password and can only view the pages content not edit
+    // Route::get('/users/{user}/edit', [UsersController::class, 'edit'])->name('users.edit');
+});

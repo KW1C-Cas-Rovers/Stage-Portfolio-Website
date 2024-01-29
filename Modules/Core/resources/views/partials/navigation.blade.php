@@ -30,7 +30,7 @@
                         </li>
                     @endif
                 @else
-                    @if(Auth::user()->role == 'super-admin')
+                    @if(Auth::user()->hasRole('Super Admin'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">
                                 Users
