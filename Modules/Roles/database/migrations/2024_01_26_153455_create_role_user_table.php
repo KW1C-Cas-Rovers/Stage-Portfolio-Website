@@ -12,10 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('role_user', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('role_id');
-            $table->timestamps();
 
             // Index
             $table->unique(['user_id', 'role_id'], 'u_idx_role_user_user_role_id'); // Ensure unique combination of user_id and role_id

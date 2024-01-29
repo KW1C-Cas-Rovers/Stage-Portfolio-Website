@@ -35,12 +35,6 @@
                 <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
             </div>
 
-            <!-- Role -->
-            <div class="mb-3">
-                <label for="role" class="form-label">{{ __('Role') }}</label>
-                <input type="text" class="form-control" id="role" name="role" value="{{ $user->role }}">
-            </div>
-
             <!-- Bio -->
             <div class="mb-3">
                 <label for="bio" class="form-label">{{ __('Bio') }}</label>
@@ -58,11 +52,32 @@
 
         <hr>
 
+        <h2>Update role</h2>
+
+        <form method="POST" action="{{ route('users.updateRole', $user->id) }}">
+            @csrf
+            @method('PUT')
+
+            <!-- Role -->
+            <div class="mb-3">
+                <label for="role" class="form-label">{{ __('Role') }}</label>
+                <select class="form-select" id="role" name="role">
+                    <option value="" disabled>Select Role</option>
+                    @foreach($roles as $role)
+                        <option value="{{ $role->id }}" @if($user->roles->contains('id', $role->id)) selected @endif>{{ $role->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update User</button>
+        </form>
+
+        <hr>
+
         <h2>Update Password</h2>
 
         <!-- Password Update Form -->
         <form method="POST" action="{{ route('users.updatePassword', $user->id) }}">
-{{--            --}}
             @csrf
             @method('PUT')
 

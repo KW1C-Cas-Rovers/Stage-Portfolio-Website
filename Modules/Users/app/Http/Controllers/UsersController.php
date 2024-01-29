@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Modules\Roles\app\Models\Role;
 use Modules\Users\app\Models\User;
 
 class UsersController extends Controller
@@ -66,8 +67,9 @@ class UsersController extends Controller
     public function edit($id): View
     {
         $user = User::findOrFail($id);
+        $roles = Role::all();
 
-        return view('users::edit', compact('user'));
+        return view('users::edit', compact('user', 'roles'));
     }
 
     /**
@@ -85,8 +87,7 @@ class UsersController extends Controller
             'first_name' => 'nullable|string|max:255',
             'preposition' => 'nullable|string|max:255',
             'last_name' => 'nullable|string|max:255',
-            'email' => 'nullable|string|email|max:255|unique:users,email,'.$user->id,
-            'role' => 'nullable|string|max:255',
+            'email' => 'nullable|string|email|max:255|unique:users,email,' . $user->id,
             'bio' => 'nullable|string',
             'website' => 'nullable|string|max:255',
         ]);
@@ -96,7 +97,6 @@ class UsersController extends Controller
             'preposition',
             'last_name',
             'email',
-            'role',
             'bio',
             'website'
         ]);
@@ -111,6 +111,27 @@ class UsersController extends Controller
 
 
         return redirect()->route('users.index')->with('info', 'No changes made.');
+    }
+
+    public function updateRole(Request $request, $id): RedirectResponse
+    {
+        $user = User::findOrFail($id);
+
+        // Validate fields
+        $request->validate([
+            'role' => 'nullable|exists:roles,id'
+        ]);
+
+        $roleId = $request->input('role');
+
+        if ($user->roles()->where('roles.id', $roleId)->exists()) {
+            return redirect()->route('users.index')->with('info', 'User already has the selected role.');
+        }
+
+        // Assuming assignRole is a custom method in your User model
+        $user->syncRoles([$roleId]);
+
+        return redirect()->route('users.index')->with('success', 'User role updated successfully.');
     }
 
     /**

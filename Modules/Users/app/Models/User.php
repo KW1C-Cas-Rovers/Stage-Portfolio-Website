@@ -4,12 +4,12 @@ namespace Modules\Users\app\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Roles\app\Models\Role;
+use Modules\Roles\app\Models\RoleUser;
 
 class User extends Authenticatable
 {
@@ -76,16 +76,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The roles that belong to the user.
-     *
-     * @return BelongsToMany
-     */
-    public function roles(): BelongsToMany
-    {
-        return $this->belongsToMany(Role::class);
-    }
-
-    /**
      * Gets the full name attributes
      *
      * @return string
@@ -107,5 +97,61 @@ class User extends Authenticatable
     public function setFullNameAttribute(): void
     {
         $this->attributes['full_name'] = $this->getFullNameAttribute();
+    }
+
+
+
+    /**
+     * The roles that belong to the user.
+     *
+     * @return BelongsToMany
+     */
+    public function roles(): BelongsToMany
+    {
+        return $this->belongsToMany(Role::class)->using(RoleUser::class);
+    }
+
+    /**
+     * Sync the roles for the user.
+     *
+     * @param array $roleIds The IDs of the roles to sync.
+     * @return void
+     */
+    public function syncRoles(array $roleIds): void
+    {
+        $this->roles()->sync($roleIds);
+    }
+
+    /**
+     * Assign a role to the user.
+     *
+     * @param mixed $roleId The ID of the role to assign.
+     * @return void
+     */
+    public function assignRole(mixed $roleId): void
+    {
+        $this->roles()->attach($roleId);
+    }
+
+    /**
+     * Detach a role from the user.
+     *
+     * @param mixed $roleId The ID of the role to detach.
+     * @return void
+     */
+    public function detachRole(mixed $roleId): void
+    {
+        $this->roles()->detach($roleId);
+    }
+
+    /**
+     * Check if the user has a specific role.
+     *
+     * @param string $roleName The name of the role to check for.
+     * @return BelongsToMany
+     */
+    public function hasRole(string $roleName): BelongsToMany
+    {
+        return $this->roles()->where('name', $roleName);
     }
 }

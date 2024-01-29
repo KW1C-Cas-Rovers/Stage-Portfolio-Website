@@ -31,4 +31,5 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::resource('users', UsersController::class)->names('users');
     Route::put('/admin/users/{user}/update-password', [UsersController::class, 'updatePassword'])->name('users.updatePassword');
+    Route::put('/admin/users/{id}/update-role', [UsersController::class, 'updateRole'])->name('users.updateRole');
 });
