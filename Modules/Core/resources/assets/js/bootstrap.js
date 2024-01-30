@@ -30,6 +30,28 @@ window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
+ * This file contains the initialization of Editor.js and its tools.
+ * Editor.js is a modern block-style editor.
+ * The tools included are Header, List, and ImageTool.
+ * They are made available globally in the window object.
+ */
+
+import EditorJS from "@editorjs/editorjs";
+import Header from '@editorjs/header';
+import Paragraph from '@editorjs/paragraph';
+import List from '@editorjs/list';
+import ImageTool from '@editorjs/image';
+import CodeTool from '@editorjs/code';
+import LinkTool from '@editorjs/link';
+window.EditorJs = EditorJS;
+window.Header = Header;
+window.Paragraph = Paragraph;
+window.List = List;
+window.ImageTool = ImageTool;
+window.CodeTool = CodeTool;
+window.LinkTool = LinkTool;
+
+/**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.

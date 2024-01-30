@@ -14,6 +14,6 @@ use Modules\Pages\app\Http\Controllers\PagesController;
 |
 */
 
-Route::group([], function () {
+Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('pages', PagesController::class)->names('pages');
 });
