@@ -29,7 +29,7 @@ Route::middleware('guest')->namespace('Modules\Users\app\Http\Controllers\Auth')
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('admin.logout.post');
 
-    Route::resource('users', UsersController::class)->names('users');
+    Route::resource('users', UsersController::class)->names('users')->except('destroy');
     Route::put('/admin/users/{user}/update-password', [UsersController::class, 'updatePassword'])->name('users.updatePassword');
     Route::put('/admin/users/{id}/update-role', [UsersController::class, 'updateRole'])->name('users.updateRole');
 });
@@ -53,6 +53,8 @@ Route::middleware(['auth', 'role:super-admin'])->prefix('admin')->group(function
     // Routes accessible only to super-admin
     // Example: Super Admin only can manage users
     // Route::resource('/users', UsersController::class)->names('users');
+
+    Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
 });
 
 Route::middleware(['auth', 'role:editor'])->prefix('admin')->group(function () {

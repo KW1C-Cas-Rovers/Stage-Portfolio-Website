@@ -3,9 +3,11 @@
 namespace Modules\Users\app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Modules\Roles\app\Models\Role;
 use Modules\Users\app\Models\User;
@@ -19,7 +21,7 @@ class UsersController extends Controller
      */
     public function index(): view
     {
-        $users = User::all();
+        $users = User::with('roles')->get();
 
         return view('users::index', compact('users'));
     }
@@ -31,18 +33,55 @@ class UsersController extends Controller
      */
     public function create(): View
     {
-        return view('users::create');
+        $roles = Role::all();
+        return view('users::create', compact('roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
+     * @param $id
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'preposition' => ['nullable', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'exists:roles,id'],
+        ]);
+
+        $role = Role::find($validatedData['role']);
+
+        if (!$role) {
+            return redirect()->back()->with('error', 'Selected role does not exist.');
+        }
+
+        try {
+            DB::beginTransaction();
+
+            $user = User::create([
+                'first_name' => $validatedData['first_name'],
+                'preposition' => $validatedData['preposition'] ?? null,
+                'last_name' => $validatedData['last_name'],
+                'email' => $validatedData['email'],
+                'password' => Hash::make($validatedData['password']),
+            ]);
+
+            $user->roles()->attach($role);
+
+            DB::commit();
+
+            return redirect()->route('users.index')->with('success', 'User created successfully.');
+        } catch (Exception $e) {
+            DB::rollBack();
+            logger()->error('Failed to create user: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to create user. Please try again.');
+        }
     }
 
     /**
