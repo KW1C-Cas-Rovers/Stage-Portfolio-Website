@@ -1,0 +1,31 @@
+{
+    "name": "admin/pages",
+    "description": "",
+    "authors": [
+        {
+            "name": "Cas Rovers",
+            "email": "casrovers@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Pages\\": "",
+            "Modules\\Pages\\App\\": "app/",
+            "Modules\\Pages\\Database\\Factories\\": "database/factories/",
+            "Modules\\Pages\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Pages\\Tests\\": "tests/"
+        }
+    }
+}
