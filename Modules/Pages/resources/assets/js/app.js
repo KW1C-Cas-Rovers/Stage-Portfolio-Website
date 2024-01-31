@@ -36,4 +36,14 @@ $(document).ready(function () {
             // Add more tools as needed
         }
     });
+
+    $('form').submit(function (event) {
+        event.preventDefault();
+
+        editor.save().then((outputData) => {
+            $('#content').val(JSON.stringify(outputData));
+
+            $(this).off('submit').submit();
+        });
+    });
 });
