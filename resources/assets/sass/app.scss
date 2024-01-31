@@ -8,5 +8,9 @@
 @import 'bootstrap';
 
 // Partial imports
+@import "partials/scrollbar";
 @import "partials/navigation";
 @import "partials/menu-btn";
+
+/* Homepage */
+@import "partials/home/intro";

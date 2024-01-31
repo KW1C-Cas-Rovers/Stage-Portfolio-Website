@@ -1,0 +1,78 @@
+.intro-block {
+    position: relative;
+    color: $white;
+    padding-top: 2.5rem;
+    .name-section {
+        .first-name-wrapper {
+            .first-name {
+                font-size: 15rem;
+                letter-spacing: .05rem;
+                margin-bottom: -3.5rem;
+            }
+        }
+        .last-name-wrapper {
+            .last-name {
+                font-size: 7rem;
+                padding-left: 9rem;
+            }
+        }
+    }
+    .description-section {
+        font-family: $font-family-content;
+
+        .description-title {
+            font-size: 2rem;
+            color: $secondary;
+        }
+
+        .description {
+            font-size: 1rem;
+        }
+    }
+
+    .scroll-btn-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .scroll-btn {
+            position: relative;
+            height: 3rem;
+            width: 1.5rem;
+            border: $secondary 1px solid;
+            border-radius: 25px;
+            cursor: pointer;
+
+            .scroll-btn-dot {
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 8px;
+                width: 8px;
+                background-color: $secondary;
+                border-radius: 50%;
+                animation: scrollAnimation   2s infinite;
+            }
+        }
+    }
+}
+
+
+@keyframes scrollAnimation {
+    0% {
+        top: 10%;
+        opacity: 1;
+    }
+    5% {
+        top: 10%;
+    }
+    50% {
+        top: 70%;
+        opacity: 1;
+    }
+    100% {
+        top: 70%;
+        opacity: 0;
+    }
+}

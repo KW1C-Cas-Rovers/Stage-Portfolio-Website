@@ -1,0 +1,29 @@
+/* WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 9px;
+    background-color: lighten($primary, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $gray-600;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: darken($gray-600, 10%);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: lighten($gray-600, 5%);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $gray-600 lighten($primary, 10%);
+}
+
+/* Internet Explorer and Edge */
+* {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
