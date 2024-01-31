@@ -38,10 +38,13 @@
     <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
 </head>
 <body>
+    @include('partials.navigation')
 
     <main class="py-4">
         @yield('content')
     </main>
+
+    @include('partials.footer')
 
     {{-- Scripts --}}
     <script type="text/javascript" src="{{ mix('assets/js/app.js') }}"></script>

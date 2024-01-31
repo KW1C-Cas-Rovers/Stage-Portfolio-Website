@@ -1,7 +1,15 @@
 // General settings
+$primary: #0F1630;
+$secondary: #5c86ef;
 
 // Body
-$body-bg: #f8fafc;
+$body-bg: $primary;
+
+$gradient-start: #4FA7D9;
+$gradient-middle: $secondary;
+$gradient-end: #492FBF;
+
+$menu-overlay-bg: #222c57;
 
 // Typography
 $font-family-sans-serif: 'Red Hat Display', sans-serif;

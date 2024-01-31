@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\core\Pages\PagesController;
+use App\Http\Controllers\MainSiteController;
+use Modules\Pages\app\Http\Controllers\PagesFrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+//Route::middleware('web')->group(function () {
+//    Route::get('{slug}', [PagesFrontController::class, 'index']);
+//    Route::get('{category}/{slug}', [PagesFrontController::class, 'show']);
+//});
+
+Route::middleware('web')->group(function () {
+    Route::get('/', [MainSiteController::class, 'index'])->name('home.page');
 });
