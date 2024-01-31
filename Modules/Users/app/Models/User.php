@@ -4,11 +4,13 @@ namespace Modules\Users\app\Models;
 
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Pages\app\Models\Page;
 use Modules\Roles\app\Models\Role;
 use Modules\Roles\app\Models\RoleUser;
 
@@ -95,7 +97,6 @@ class User extends Authenticatable
     }
 
 
-
     /**
      * The roles that belong to the user.
      *
@@ -161,6 +162,16 @@ class User extends Authenticatable
         $matchingRoles = $this->roles()->whereIn('name', $roleNames)->get();
 
         return $matchingRoles->isNotEmpty();
+    }
+
+    /**
+     * Get the pages created by the user.
+     *
+     * @return HasMany
+     */
+    public function pages(): HasMany
+    {
+        return $this->hasMany(Page::class);
     }
 
     /**

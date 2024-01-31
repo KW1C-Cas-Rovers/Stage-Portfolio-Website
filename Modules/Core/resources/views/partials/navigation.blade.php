@@ -39,7 +39,7 @@
                     @endif
 
                     <li class="nav-item">
-                         <a class="nav-link" href="{{ route('pages.create') }}">
+                         <a class="nav-link" href="{{ route('pages.index') }}">
                              Pages
                          </a>
                     </li>
