@@ -1,7 +1,7 @@
 <div class="intro-block ">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-lg-7">
                 <div class="name-section">
                     <div class="first-name-wrapper">
                         <h1 class="first-name">Cas</h1>
@@ -21,7 +21,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-lg-5">
                 <div class="image-container">
 
                 </div>
