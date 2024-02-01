@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="experiences-wrapper">
-                    <h3 class="experiences-title">Ervaringen.</h3>
+                    <h3 class="experiences-title">{{ __('Vaardigheden.') }}</h3>
                     <div class="experience-icons-wrapper">
                         <div class="icon-wrapper">
                             <img class="icon" src="{{ mix('assets/media/images/icons/php-logo.svg') }}" alt="PHP Logo">
