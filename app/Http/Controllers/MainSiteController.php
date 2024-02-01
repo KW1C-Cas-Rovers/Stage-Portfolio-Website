@@ -24,6 +24,15 @@ class MainSiteController extends Controller
     }
 
     /**
+     * Shows the experiences' page of the website
+     * @return View
+     */
+    public function experiences(): view
+    {
+        return view('experiences');
+    }
+
+    /**
      * Download a PDF file.
      *
      * @param string $fileName The name of the PDF file to download.

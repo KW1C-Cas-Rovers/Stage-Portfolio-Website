@@ -1,3 +1,7 @@
+@php
+    use \Illuminate\Support\Facades\Route;
+@endphp
+
 <div class="navigation pt-2">
     <div class="navbar-wrapper">
         <div class="container">
@@ -13,7 +17,7 @@
                         @include('partials.menu-btn')
                         <div class="navbar-items d-none d-md-flex gap-4">
                             {{-- First Button --}}
-                            <a class="nav-link text-light link" href="#">Ervaringen</a>
+                            <a class="nav-link link {{ Route::currentRouteName() === 'experiences.page' ? 'active' : '' }}" href="{{ route('experiences.page') }}">Ervaringen</a>
 
 
                             {{-- Last Button --}}
@@ -32,7 +36,7 @@
             <div class="col-md-12">
                 <div class="menu-items">
                     {{-- First button --}}
-                    <a class="nav-link text-light link" href="#">Ervaringen</a>
+                    <a class="nav-link text-light link {{ Route::currentRouteName() === 'experiences.page' ? 'active' : '' }}" href="{{ route('experiences.page') }}">Ervaringen</a>
 
                     {{-- Last button --}}
                     <a href="" class="contact-btn nav-link text-light link">Contact</a>

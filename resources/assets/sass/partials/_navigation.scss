@@ -21,6 +21,7 @@
 
         .link {
             position: relative;
+            color: $white;
             font-size: 1.25rem;
             font-weight: $font-weight-semibold;
             transition: all .4s ease-in-out;
@@ -38,6 +39,14 @@
 
             &:hover::after {
                 background: rgba(255, 255, 255, 1);
+            }
+
+            &.active {
+                color: $secondary;
+
+                &::after {
+                    background: rgba($secondary, 1);
+                }
             }
         }
 
