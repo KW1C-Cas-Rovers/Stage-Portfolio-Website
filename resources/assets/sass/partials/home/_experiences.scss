@@ -1,0 +1,39 @@
+.experiences {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .experiences-wrapper {
+        .experiences-title {
+            color: $secondary;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .experience-icons-wrapper {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 40px;
+
+            .icon-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column;
+                gap: 10px;
+                border-radius: 50%;
+                margin: 10px;
+
+                .icon {
+                    height: 70px;
+                }
+                .icon-description {
+                    font-size: 1.225rem;
+                    font-weight: $font-weight-semibold;
+                }
+            }
+        }
+    }
+}

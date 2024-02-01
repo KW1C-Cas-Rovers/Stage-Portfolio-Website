@@ -3,4 +3,5 @@
 @section('content')
     @include('partials.home.intro')
     @include('partials.home.about-me')
+    @include('partials.home.experiences')
 @endsection
