@@ -1,22 +1,24 @@
-<div class="navigation py-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-6 col-lg-4">
-                <div class="logo float-start h-100 d-flex justify-content-center align-items-center">
-                    <a class="logo-link text-secondary" href="{{ route('home.page') }}">C<span
-                            class="text-light">.</span>Rovers</a>
+<div class="navigation pt-2">
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-4">
+                    <div class="logo float-start h-100 d-flex justify-content-center align-items-center">
+                        <a class="logo-link text-secondary" href="{{ route('home.page') }}">C<span
+                                class="text-light">.</span>Rovers</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 col-lg-8">
-                <div class="float-end h-100 d-flex justify-content-center align-items-center">
-                    @include('partials.menu-btn')
-                    <div class="navbar-items d-none d-md-flex gap-4">
-                        {{-- First Button --}}
-                        <a class="nav-link text-light link" href="#">Ervaringen</a>
+                <div class="col-6 col-lg-8">
+                    <div class="float-end h-100 d-flex justify-content-center align-items-center">
+                        @include('partials.menu-btn')
+                        <div class="navbar-items d-none d-md-flex gap-4">
+                            {{-- First Button --}}
+                            <a class="nav-link text-light link" href="#">Ervaringen</a>
 
 
-                        {{-- Last Button --}}
-                        <a class="contact-btn" href="#">Contact</a>
+                            {{-- Last Button --}}
+                            <a class="contact-btn" href="#">Contact</a>
+                        </div>
                     </div>
                 </div>
             </div>
