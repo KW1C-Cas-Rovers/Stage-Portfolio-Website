@@ -1,4 +1,4 @@
-<div class="intro-block ">
+<div class="intro-block">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
@@ -13,11 +13,10 @@
                 <div class="description-section">
                     <h4 class="description-title">{{ __('Introductie.') }}</h4>
                     <p class="description">
-                        {{ __('Als tweedejaars student aan het Koning Willem 1 College in Cuijk, volg ik momenteel de opleiding
-                        Software Development. Mijn passie voor technologie begon al op jonge leeftijd, en ik ben
-                        gefascineerd door de mogelijkheden die het biedt om onze wereld te verbeteren. Gedreven door
-                        mijn liefde voor programmeren, ben ik vastbesloten om mijn vaardigheden te blijven ontwikkelen
-                        en mijn droom om een succesvolle softwareontwikkelaar te worden, waar te maken.') }}
+                        {{ __('Hallo, ik ben Cas Rovers, een tweedejaars student aan het Koning Willem 1 College in Cuijk, hier
+                        volg ik momenteel de opleiding Software Development. Ik ben altijd al gefascineerd geweest door
+                        technologie, hoe dit allemaal werkt en hoe het onze wereld kan verbeteren. Daarom heb ik
+                        besloten om softwareontwikkelaar te worden.') }}
                     </p>
                 </div>
             </div>
@@ -26,7 +25,7 @@
                     <img src="#" alt="{{ __('Persoon foto') }}">
                 </div>
             </div>
-            <div class="scroll-btn-wrapper pt-3 pb-5">
+            <div class="scroll-btn-wrapper pt-5">
                 <div class="scroll-btn">
                     <span class="scroll-btn-dot"></span>
                 </div>

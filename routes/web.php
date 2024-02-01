@@ -23,3 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('web')->group(function () {
     Route::get('/', [MainSiteController::class, 'index'])->name('home.page');
 });
+
+Route::middleware('web')->prefix('download')->group(function () {
+    Route::get('/{fileName}', [MainSiteController::class, 'getPdfDownload'])->name('download.cv');
+});

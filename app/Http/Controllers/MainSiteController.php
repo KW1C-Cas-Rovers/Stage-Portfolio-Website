@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class MainSiteController extends Controller
 {
@@ -19,5 +21,27 @@ class MainSiteController extends Controller
     public function index(): view
     {
         return view('index');
+    }
+
+    /**
+     * Download a PDF file.
+     *
+     * @param string $fileName The name of the PDF file to download.
+     * @return BinaryFileResponse The response containing the downloaded file.
+     * @throws HttpException If the file does not exist.
+     */
+    public function getPdfDownload(string $fileName): BinaryFileResponse
+    {
+        $filePath = public_path() . "/assets/media/downloads/$fileName";
+
+        if (!File::exists($filePath)) {
+            abort(404);
+        }
+
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+
+        return response()->download($filePath, "$fileName", $headers);
     }
 }
