@@ -2,7 +2,7 @@
     <div class="footer-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="footer-message">
                         <h2 class="footer-title">Drop me a message.</h2>
                         <p class="footer-description">
@@ -31,15 +31,36 @@
                                 <div class="image-wrapper">
                                     <img class="contact-img" src="{{ mix('assets/media/images/icons/geo-alt.svg')  }}" alt="Telephone icon">
                                 </div>
-                                <p class="contact-info">House no: 7 Zaalheuvelweg, velp, 5363TE, Netherlands</p>
+                                <p class="contact-info">
+                                    House no: Zaalheuvelweg 7, Place: Velp/Grave, Postal code: 5363TE, Country: Netherlands
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <form action="{{ route('home.page') }}" method="post">
+                <div class="col-md-1">
 
-                    </form>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-wrapper">
+                        <form action="{{ route('home.page') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label class="d-none" for="name"></label>
+                                <input type="text" id="name" class="input form-control" name="name" placeholder="Name.">
+                            </div>
+                            <div class="form-group">
+                                <label class="d-none" for="email"></label>
+                                <input type="email" id="email" class="input form-control" name="email" placeholder="E-mail.">
+                            </div>
+                            <div class="form-group">
+                                <label class="d-none" for="message"></label>
+                                <textarea type="text" id="message" class="input form-control" name="message" placeholder="Message."></textarea>
+                            </div>
+
+                            <button type="submit" class="contact-submit-btn btn btn-primary">Send</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

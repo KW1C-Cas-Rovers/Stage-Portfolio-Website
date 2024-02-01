@@ -66,4 +66,42 @@
             }
         }
     }
+
+    .form-wrapper {
+        padding: 20px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, $gradient-start, $gradient-end);
+
+        form {
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+
+            .form-group {
+
+                &:nth-child(4) {
+                    .input {
+                        height: 150px;
+                    }
+                }
+
+                .input {
+                    border: none;
+                    color: $white;
+
+                    &::placeholder {
+                        color: darken($white, 30%);
+                    }
+                }
+            }
+
+            .contact-submit-btn {
+                display: inline-block;
+
+                &:hover {
+                    background: lighten($primary, 5%);
+                }
+            }
+        }
+    }
 }
