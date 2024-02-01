@@ -11,22 +11,22 @@
                     </div>
                 </div>
                 <div class="description-section">
-                    <h4 class="description-title">Introductie.</h4>
+                    <h4 class="description-title">{{ __('Introductie.') }}</h4>
                     <p class="description">
-                        Als tweedejaars student aan het Koning Willem 1 College in Cuijk, volg ik momenteel de opleiding
+                        {{ __('Als tweedejaars student aan het Koning Willem 1 College in Cuijk, volg ik momenteel de opleiding
                         Software Development. Mijn passie voor technologie begon al op jonge leeftijd, en ik ben
                         gefascineerd door de mogelijkheden die het biedt om onze wereld te verbeteren. Gedreven door
                         mijn liefde voor programmeren, ben ik vastbesloten om mijn vaardigheden te blijven ontwikkelen
-                        en mijn droom om een succesvolle softwareontwikkelaar te worden, waar te maken.
+                        en mijn droom om een succesvolle softwareontwikkelaar te worden, waar te maken.') }}
                     </p>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="image-container">
-
+                    <img src="#" alt="{{ __('Persoon foto') }}">
                 </div>
             </div>
-            <div class="scroll-btn-wrapper">
+            <div class="scroll-btn-wrapper pt-3 pb-5">
                 <div class="scroll-btn">
                     <span class="scroll-btn-dot"></span>
                 </div>

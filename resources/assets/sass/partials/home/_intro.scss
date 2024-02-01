@@ -1,11 +1,12 @@
 .intro-block {
     position: relative;
-    color: $white;
     padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
     .name-section {
         .first-name-wrapper {
             .first-name {
-                font-size: 15rem;
+                font-size: 14rem;
                 letter-spacing: .05rem;
                 margin-bottom: -3.5rem;
             }
@@ -28,6 +29,13 @@
         .description {
             font-size: 1rem;
         }
+    }
+
+    .image-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
     .scroll-btn-wrapper {
