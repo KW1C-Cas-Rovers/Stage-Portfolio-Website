@@ -7,6 +7,9 @@
 // Bootstrap
 @import 'bootstrap';
 
+// General styling
+@import "general";
+
 // Partial imports
 @import "partials/scrollbar";
 @import "partials/navigation";
@@ -14,3 +17,4 @@
 
 /* Homepage */
 @import "partials/home/intro";
+@import "partials/home/about-me";
