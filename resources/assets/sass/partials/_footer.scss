@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     color: $white;
-    padding: 60px 0;
+    padding: 50px 0;
     background: linear-gradient(-135deg, $gradient-start, $gradient-end);
     border-top-left-radius: 95px;
     border-top-right-radius: 95px;
@@ -33,6 +33,10 @@
         z-index: 2;
         height: 100%;
         width: 100%;
+
+        h2 {
+            font-size: 2.3rem;
+        }
     }
 
     .footer-contact-info {
@@ -102,6 +106,83 @@
                     background: lighten($primary, 5%);
                 }
             }
+        }
+    }
+
+    .copyright {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+
+
+
+        .logo {
+            .logo-link {
+                font-size: 2rem;
+                font-weight: $font-weight-bold;
+                text-decoration: none;
+            }
+        }
+        .copyright-text {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .copyright-btns {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            gap: 10px;
+
+            .info-buttons {
+                display: flex;
+                height: 50px;
+                width: 50px;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, $gradient-start, $gradient-end);
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 0px 26px -5px rgba(0, 0, 0, 0.82);
+                -moz-box-shadow: 0px 0px 26px -5px rgba(0, 0, 0, 0.82);
+                box-shadow: 0px 0px 26px -5px rgba(0, 0, 0, 0.82);
+
+                img {
+                    height: 25px;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .footer {
+        &::before, &::after {
+            width: 100px;
+            top: -10%;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .footer {
+        .copyright {
+            flex-flow: column;
+            gap: 20px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .footer {
+        &::before, &::after {
+            display: none;
         }
     }
 }
