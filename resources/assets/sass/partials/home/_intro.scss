@@ -88,3 +88,22 @@
         opacity: 0;
     }
 }
+
+@include media-breakpoint-down(sm) {
+    .intro-block {
+        .name-section {
+            .first-name-wrapper {
+                .first-name {
+                    font-size: 10rem;
+                }
+            }
+            .last-name-wrapper {
+                .last-name {
+                    font-size: 5rem;
+                    padding-top: 2rem;
+                    padding-left: 4rem;
+                }
+            }
+        }
+    }
+}

@@ -181,6 +181,9 @@
 
 @include media-breakpoint-down(sm) {
     .footer {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+
         &::before, &::after {
             display: none;
         }
