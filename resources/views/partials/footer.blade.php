@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="footer-message">
-                        <h2 class="footer-title">Drop me a message.</h2>
+                        <h3 class="footer-title">Drop me a message.</h3>
                         <p class="footer-description">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo sit amet tempor
                             ullamcorper. Suspendisse felis leo, rutrum nec mattis at, vehicula vehicula metus. Nullam
