@@ -1,28 +1,4 @@
-.prof-experiences {
+.prof-experiences-box {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-
-    .prof-experiences-wrapper {
-        padding-top: 2rem;
-        padding-bottom: 1.5rem;
-        width: 100%;
-
-        .experiences-intro {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            flex-flow: column;
-
-            .intro-title {
-                text-align: center;
-                color: $secondary;
-                font-size: 3.5rem;
-            }
-            .intro-description {
-                width: 70%;
-                text-align: center;
-            }
-        }
-    }
 }
