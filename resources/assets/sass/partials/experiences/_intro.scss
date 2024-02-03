@@ -1,0 +1,27 @@
+.experience-into-block {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    .intro-wrapper {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        width: 100%;
+
+        .experience-into {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+
+            .experience-title {
+                color: $secondary;
+                font-size: 3.5rem;
+            }
+            .experience-description {
+                width: 70%;
+                text-align: center;
+            }
+        }
+    }
+}
