@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-    Hello world
+    @include('partials.experiences.prof-experiences')
 @endsection
