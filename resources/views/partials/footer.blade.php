@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer id="contact" class="footer">
     <div class="footer-wrapper">
         <div class="container">
             <div class="row gap-2 gap-md-0">

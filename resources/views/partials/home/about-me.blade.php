@@ -20,7 +20,7 @@
                         succesvolle softwareontwikkelaar te worden werkelijkheid te maken.') }}
                     </p>
                     <div class="about-me-btn-wrapper">
-                        <a class="contact-btn" href="#">Contact</a>
+                        <a class="contact-btn" href="#contact">Contact</a>
                         <a class="cv-btn btn btn-outline-secondary" href="{{ route('download.cv', ['fileName' => 'CV.pdf']) }}">Mijn CV</a>
                     </div>
                 </div>

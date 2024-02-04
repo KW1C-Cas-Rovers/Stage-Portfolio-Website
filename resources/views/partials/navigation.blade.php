@@ -21,7 +21,7 @@
 
 
                             {{-- Last Button --}}
-                            <a class="contact-btn" href="#">Contact</a>
+                            <a class="contact-btn" href="#contact">Contact</a>
                         </div>
                     </div>
                 </div>
