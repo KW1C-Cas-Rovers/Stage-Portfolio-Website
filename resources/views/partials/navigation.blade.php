@@ -19,6 +19,7 @@
                             {{-- First Button --}}
                             <a class="nav-link link {{ Route::currentRouteName() === 'experiences.page' ? 'active' : '' }}" href="{{ route('experiences.page') }}">Ervaringen</a>
 
+                            <a class="nav-link link {{ Route::currentRouteName() === 'projects.page' ? 'active' : '' }}" href="{{ route('projects.page') }}">Projecten</a>
 
                             {{-- Last Button --}}
                             <a class="contact-btn" href="#contact">Contact</a>
@@ -38,8 +39,10 @@
                     {{-- First button --}}
                     <a class="nav-link text-light link {{ Route::currentRouteName() === 'experiences.page' ? 'active' : '' }}" href="{{ route('experiences.page') }}">Ervaringen</a>
 
+                    <a class="nav-link text-light link {{ Route::currentRouteName() === 'projects.page' ? 'active' : '' }}" href="{{ route('projects.page') }}">Projecten</a>
+
                     {{-- Last button --}}
-                    <a href="" class="contact-btn nav-link text-light link">Contact</a>
+                    <a href="#contact" class="contact-btn nav-link text-light link">Contact</a>
                 </div>
             </div>
         </div>

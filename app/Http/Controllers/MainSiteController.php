@@ -24,12 +24,21 @@ class MainSiteController extends Controller
     }
 
     /**
-     * Shows the experiences' page of the website
+     * Shows the experience's page of the website
      * @return View
      */
     public function experiences(): view
     {
         return view('experiences');
+    }
+
+    /**
+     * Shows the project's page of the website
+     * @return View
+     */
+    public function projects(): view
+    {
+        return view('projects');
     }
 
     /**
